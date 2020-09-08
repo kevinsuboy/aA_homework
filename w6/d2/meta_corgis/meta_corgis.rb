@@ -1,4 +1,3 @@
-require 'byebug'
 class SnackBox
   SNACK_BOX_DATA = {
     1 => {
@@ -108,55 +107,14 @@ class MetaCorgiSnacks
   def initialize(snack_box, box_id)
     @snack_box = snack_box
     @box_id = box_id
-
-    @snack_box.methods.grep(/^get_(.*)_info$/) { MetaCorgiSnacks.define_snack $1 }
   end
 
-  # def method_missing(name, *args)
-  #   # Your code goes here...
-  #   # p name
-  #   # p *args
-  #   # debugger
-  #   n = @snack_box.send("get_#{name}_info", @box_id)
-  #   t = @snack_box.send("get_#{name}_tastiness", @box_id)
-  #   # p name
-  #   display_name = "#{name.to_s.split('_').map(&:capitalize).join(' ')}"
-  #   # p name
-  #   result = "#{display_name}: #{n}: #{t} "
-  #   t > 30 ? "* #{result}" : result
-
-  # end
+  def method_missing(name, *args)
+    # Your code goes here...
+  end
 
 
   def self.define_snack(name)
     # Your code goes here...
-    define_method(name) do
-      n = @snack_box.send("get_#{name}_info", @box_id)
-      t = @snack_box.send("get_#{name}_tastiness", @box_id)
-      display_name = "#{name.split('_').map(&:capitalize).join(' ')}"
-      result = "#{display_name}: #{n}: #{t} "
-      t > 30 ? "* #{result}" : result
-    end
   end
-end
-
-
-if __FILE__ == $PROGRAM_NAME
-  # snack_box = SnackBox.new
-  # meta_snacks = MetaCorgiSnacks.new(snack_box, 1)
-  # p meta_snacks.bone # => "Bone: Phoenician rawhide: 20 "
-  # p meta_snacks.kibble # => "* Kibble: Delicately braised hamhocks: 33"
-
-  # MetaCorgiSnacks.define_snack("bone")
-  # snack_box = SnackBox.new
-  # meta_snacks = MetaCorgiSnacks.new(snack_box, 1)
-  # p meta_snacks.bone # => "Bone: Phoenician rawhide: 20 "
-  # p meta_snacks.kibble # => "NoMethodError: undefined method `kibble'...""
-
-  snack_box = SnackBox.new
-  meta_snacks = MetaCorgiSnacks.new(snack_box, 1)
-  p meta_snacks.bone # => "Bone: Phoenician rawhide: 20 "
-  p meta_snacks.kibble # => "* Kibble: Delicately braised hamhocks: 33 "
-  p meta_snacks.treat # => "Treat: Chewy dental sticks: 40 "
-
 end

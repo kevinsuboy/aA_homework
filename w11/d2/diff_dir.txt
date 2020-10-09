@@ -1,0 +1,14 @@
+Files rainbow/bundle.js and solution/bundle.js differ
+Files rainbow/bundle.js.map and solution/bundle.js.map differ
+Common subdirectories: rainbow/components and solution/components
+Only in rainbow: node_modules
+Files rainbow/package-lock.json and solution/package-lock.json differ
+Files rainbow/package.json and solution/package.json differ
+Files rainbow/bundle.js and solution/bundle.js differ
+Files rainbow/bundle.js.map and solution/bundle.js.map differ
+Files rainbow/components/blue.jsx and solution/components/blue.jsx differ
+Files rainbow/components/rainbow.jsx and solution/components/rainbow.jsx differ
+Files rainbow/components/red.jsx and solution/components/red.jsx differ
+Only in rainbow: node_modules
+Files rainbow/package-lock.json and solution/package-lock.json differ
+Files rainbow/package.json and solution/package.json differ
